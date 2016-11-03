@@ -58,7 +58,7 @@ impl<W> BuildFromWindowSettings for GliumWindow<W>
 {
     fn build_from_window_settings(settings: &WindowSettings) -> Result<GliumWindow<W>, String> {
         // Turn on sRGB.
-        let settings = settings.clone().srgb(true);
+        //let settings = settings.clone().srgb(true);
         GliumWindow::new(&Rc::new(RefCell::new(try!(settings.build()))))
             .map_err(|err| match err {
                 GliumCreationError::BackendCreationError(..) =>
